@@ -1,0 +1,71 @@
+body {
+    padding-top: 40px;
+}
+
+.starter-template {
+    padding: 20px 15px;
+    text-align: center;
+}
+
+table {
+    text-align: left;
+}
+
+div.thumbnail img {
+    max-height: 200px;
+}
+
+div.form-inline form {
+    display: inline;
+}
+
+div.labels {
+    position: absolute;
+}
+
+div.labels span.badge {
+    display: block;
+}
+
+span.badge.badge-success {
+    color: #fff;
+    background-color: #28a745;
+}
+
+span.badge.badge-warning {
+    color: #fff;
+    background-color: #dc3545;
+}
+
+span.badge.badge-danger {
+    color: #212529;
+    background-color: #ffc107;
+}
+
+div.filters {
+    padding-bottom: 5px;
+}
+
+.sidenav {
+    width: 230px;
+    position: relative;
+    z-index: 1;
+    top: 180px;
+    left: 30px;
+    background: #eee;
+    overflow-x: hidden;
+
+}
+
+.sidenav a {
+    padding: 16px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #2196F3;
+
+}
+
+.sidenav a:hover {
+    color: #064579;
+}
+
