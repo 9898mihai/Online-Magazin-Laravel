@@ -46,26 +46,36 @@ div.filters {
     padding-bottom: 5px;
 }
 
-.sidenav {
-    width: 230px;
+/* Dropdown Button */
+.dropbtn {
+    background-color: #100f0f;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
     position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: static;
+    background-color: #f1f1f1;
+    min-width: 160px;
     z-index: 1;
-    top: 180px;
-    left: 30px;
-    background: #eee;
-    overflow-x: hidden;
-
 }
-
-.sidenav a {
-    padding: 16px 8px 6px 16px;
+.dropdown-content a {
+    color: #212529;
+    padding: 12px 16px;
     text-decoration: none;
-    font-size: 20px;
-    color: #2196F3;
-
+    display: block;
 }
 
-.sidenav a:hover {
-    color: #064579;
-}
+.dropdown-content a:hover {background-color: #ddd;}
 
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #212529;}

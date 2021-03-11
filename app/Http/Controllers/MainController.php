@@ -8,11 +8,11 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    public function index() {
-        $products = Product ::get();
-        $categories = Category::get();
-        return view('index', compact('products','categories'));
-    }
+//    public function index() {
+//        $products = Product ::get();
+//        $categories = Category::get();
+//        return view('index', compact('products','categories'));
+//    }
 
     public function categories() {
         $categories = Category::get();
@@ -28,4 +28,5 @@ class MainController extends Controller
 
         return view('product', ['product' => $product]);
     }
+
 }
