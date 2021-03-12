@@ -2,10 +2,9 @@
     <div class="thumbnail">
         <div class="labels">
         </div>
-        <img src="/storage/noimage.png" alt="">
         <div class="caption">
             <h3>{{$product->name}}</h3>
-            {{ $product->category->name }}
+            <img src="{{Storage::url($product->image)}}" alt="">
             <p>{{$product->price}}$</p>
             <p>
             <form action="/basket/add/1" method="POST">

@@ -19,7 +19,7 @@
     </div>
     <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="/">All products</a></li>
+            <li><a href="/">All products</a></li>
             <li ><a href="{{ route('categories') }}">Categories</a></li>
             <div class="dropdown">
                 <button class="dropbtn">Dropdown</button>
