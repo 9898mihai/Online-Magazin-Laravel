@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('master')
 @section('title', 'Pagina principala')
 @section('content')
 <div class="container">

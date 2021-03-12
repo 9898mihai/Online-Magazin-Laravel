@@ -15,18 +15,22 @@ class MainController extends Controller
 //    }
 
     public function categories() {
-        $categories = Category::get();
+        $categories = CategoryController::allCategory();
         return view('categories', compact('categories'));
     }
 
     public function category($code) {
         $category = Category::where('code', $code)->first();
-        return view('category', compact('category'));
+        $categories = CategoryController::allCategory();
+        return view('category', compact('category','categories'));
     }
 
-    public function product($category, $product = null) {
-
-        return view('product', ['product' => $product]);
+    public function product( $product = null) {
+        $categories = CategoryController::allCategory();
+        return view('product', [
+            'product' => $product,
+            'categories' => $categories
+        ]);
     }
 
 }
