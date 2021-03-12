@@ -8,7 +8,12 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     public static function allProducts() {
-        $products = Product ::get();
+        $products = Product::get();
           return compact('products');
+    }
+
+    public static function getProduct() {
+        $product = Product::get()->first();
+       return view('product', compact('product'));
     }
 }
