@@ -8,8 +8,7 @@
         <p>Price: {{$product->price}}$</p>
         <form action="/basket/add/1" method="POST">
             <button type="submit" class="btn btn-success" role="button">Add to Cart</button>
-
-            <input type="hidden" name="" value="">        </form>
+            <input type="hidden" name="" value=""></form>
     </div>
 </div>
 @endsection

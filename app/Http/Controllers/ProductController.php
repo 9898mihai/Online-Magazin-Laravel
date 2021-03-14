@@ -11,9 +11,4 @@ class ProductController extends Controller
         $products = Product::get();
           return compact('products');
     }
-
-    public static function getProduct() {
-        $product = Product::get()->first();
-       return view('product', compact('product'));
-    }
 }
