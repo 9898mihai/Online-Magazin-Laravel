@@ -20,7 +20,6 @@
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     @auth
-                    <li><a href="/">Categorii</a></li>
                     <li><a href="/">Produse</a>
                     @endauth
                 </ul>

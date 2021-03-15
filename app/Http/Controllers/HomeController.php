@@ -23,6 +23,6 @@ class HomeController extends Controller
      */
     public function home()
     {
-        return view('auth.categories.home');
+        return view('auth.products.form');
     }
 }
