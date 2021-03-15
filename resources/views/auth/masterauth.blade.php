@@ -23,11 +23,13 @@
                     <li><a href="/">Produse</a>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Login</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">Register</a>
-                    </li>
+                    @guest
+                    <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
+                    @endguest
+                    @auth
+                    <li class="nav-item"><a class="nav-link" href="{{ route('get-logout') }}">Logout</a></li>
+                     @endauth
                 </ul>
             </div>
         </div>
