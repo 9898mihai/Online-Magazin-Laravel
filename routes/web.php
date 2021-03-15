@@ -14,5 +14,9 @@ Route::get ('/', function() {
     $categories = App\Http\Controllers\CategoryController::allCategory();
     $products = App\Http\Controllers\ProductController::allProducts();
 
-    return view('home', compact('products','categories'));
+    return view('index', compact('products','categories'));
 });
+
+Auth::routes();
+Route::get('/home', 'App\Http\Controllers\HomeController@home')->name('home');
+Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('get-logout');

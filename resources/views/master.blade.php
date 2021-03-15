@@ -30,6 +30,15 @@
                 @endforeach
             </div>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+                @guest
+            <li><a href="{{ route('login') }}">Login</a></li>
+                @endguest
+                @auth
+            <li><a href="{{ route('home') }}">Add Products</a></li>
+            <li><a href="{{ route('get-logout') }}">Logout</a></li>
+                @endauth
+        </ul>
     </div>
 </nav>
         @yield('content')
