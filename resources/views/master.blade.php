@@ -35,7 +35,7 @@
             <li><a href="{{ route('login') }}">Login</a></li>
                 @endguest
                 @auth
-            <li><a href="{{ route('home') }}">Add Products</a></li>
+            <li><a href="{{ route('addProduct') }}">Add Products</a></li>
             <li><a href="{{ route('get-logout') }}">Logout</a></li>
                 @endauth
         </ul>

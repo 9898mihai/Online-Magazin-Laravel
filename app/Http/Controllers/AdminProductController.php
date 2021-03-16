@@ -44,6 +44,7 @@ class AdminProductController extends Controller
         $product->name = $request->name;
         $product->category_id = $request->category_id;
         $product->description = $request->description;
+        $product->image = $request->image;
         $product->save();
         return redirect()->back()->with('message', 'Product added !!!');
     }

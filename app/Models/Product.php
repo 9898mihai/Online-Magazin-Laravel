@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class Product extends Model
 {
     protected $fillable = [
-        'name', 'code', 'price', 'category_id', 'description'
+        'name', 'code', 'price', 'category_id', 'description', 'image'
     ];
 
     public function category()
