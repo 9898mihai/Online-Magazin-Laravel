@@ -28,8 +28,7 @@ class AdminProductController extends Controller
      */
     public function create()
     {
-        $categories = Category::get();
-        return view('auth.products.form', compact('categories'));
+        //
     }
 
     /**
@@ -40,7 +39,9 @@ class AdminProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $productData = $request->all();
+        Product::create($productData);
+        return redirect()->route('index');
     }
 
     /**
