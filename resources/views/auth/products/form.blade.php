@@ -25,7 +25,7 @@
                     <div class="col-sm-6"><br>
                         <select name="category_id" id="category_id" class="form-control">
                             @foreach($categories as $category)
-                                <option value="">{{ $category->name }}</option>
+                                <option value="{{$category->id}}">{{ $category->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -52,4 +52,9 @@
             </div>
         </form>
     </div>
+    @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+    @endif
 @endsection

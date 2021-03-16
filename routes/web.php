@@ -18,6 +18,6 @@ Route::get ('/', function() {
 
 
 Auth::routes();
-Route::post('/addProduct', 'App\Http\Controllers\ProductController@addProduct')->name('addProduct')->middleware('auth');
+Route::get('/addProduct', 'App\Http\Controllers\ProductController@addProduct')->name('addProduct')->middleware('auth');
 Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('get-logout');
 Route::resource('products','App\Http\Controllers\AdminProductController');

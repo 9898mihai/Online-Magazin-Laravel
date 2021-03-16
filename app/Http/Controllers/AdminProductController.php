@@ -39,9 +39,13 @@ class AdminProductController extends Controller
      */
     public function store(Request $request)
     {
-        $productData = $request->all();
-        Product::create($productData);
-        return redirect()->route('index');
+        $product = new Product;
+        $product->code = $request->code;
+        $product->name = $request->name;
+        $product->category_id = $request->category_id;
+        $product->description = $request->description;
+        $product->save();
+        return redirect()->back()->with('message', 'Product added !!!');
     }
 
     /**
