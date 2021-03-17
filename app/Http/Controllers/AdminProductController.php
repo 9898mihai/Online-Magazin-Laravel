@@ -9,6 +9,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
+
 class AdminProductController extends Controller
 {
     /**
@@ -39,12 +40,18 @@ class AdminProductController extends Controller
      */
     public function store(Request $request)
     {
+
+        if ($request->has('image')) {
+            $imagepath = $request->file('image')->store('public');
+        }
+
         $product = new Product;
-        $product->code = $request->code;
         $product->name = $request->name;
+        $product->code = $request->code;
+        $product->price = $request->price;
         $product->category_id = $request->category_id;
         $product->description = $request->description;
-        $product->image = $request->image;
+        $product->image = $imagepath;
         $product->save();
         return redirect()->back()->with('message', 'Product added !!!');
     }

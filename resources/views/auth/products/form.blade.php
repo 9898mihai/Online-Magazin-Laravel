@@ -8,6 +8,12 @@
             <div>
                 @csrf
                 <div class="input-group row">
+                    <label for="name" class="col-sm-2 col-form-label">Name: </label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="name" id="name" value="">
+                    </div>
+                </div><br>
+                <div class="input-group row">
                     <label for="code" class="col-sm-2 col-form-label">Code: </label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="code" id="code" value="">
@@ -15,9 +21,9 @@
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Name: </label>
+                    <label for="name" class="col-sm-2 col-form-label">Price: </label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="name" id="name" value="">
+                        <input type="number" class="form-control" name="price" id="price" value="">
                     </div>
                 </div><br>
                 <div class="input-group row">
@@ -36,9 +42,7 @@
                     <div class="col-sm-6">
                         <textarea name="description" id="description" cols="72" rows="7"></textarea>
                     </div>
-                </div>
-                <br>
-                <br>
+                </div><br><br>
                 <div class="input-group row">
                     <label for="image" class="col-sm-2 col-form-label">Image: </label>
                     <div class="col-sm-10">
@@ -47,7 +51,7 @@
                         </label>
                     </div>
                 </div>
-                    </div>
+                    </div><br>
                 <button class="btn btn-success">Add!</button>
             </div>
         </form>

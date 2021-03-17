@@ -20,7 +20,7 @@
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     @auth
-                    <li><a href="/">Produse</a>
+                    <li><a href="{{ route('addProduct') }}">Produse</a>
                     @endauth
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
