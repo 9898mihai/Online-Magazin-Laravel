@@ -55,7 +55,7 @@
                     </div>
                 </div>
             </div><br>
-            <button class="btn btn-success">Add!</button>
+            <button class="btn btn-success">Edit!</button>
     </div>
     </form>
     </div>

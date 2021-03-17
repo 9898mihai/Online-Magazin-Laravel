@@ -88,13 +88,14 @@ class AdminProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-
+        $params = $request->all();
+        unset($params['image']);
         if ($request->has('image')) {
             Storage::delete($product->image);
-            $imagepath = $request->file('image')->store('public');
+            $params['image'] = $request->file('image')->store('public');
         }
 
-        $product->update($imagepath);
+        $product->update($params);
         return redirect()->back()->with('message', 'Product edited !!!');
     }
 
