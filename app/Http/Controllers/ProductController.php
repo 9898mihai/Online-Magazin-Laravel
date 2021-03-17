@@ -18,8 +18,8 @@ class ProductController extends Controller
         return view('auth.products.addForm', compact('categories'));
     }
 
-    public function editProduct(){
-        $product = Product::where('code')->first();
+    public function editProduct($id){
+        $product = Product::where('id',$id)->first();
         $categories = Category::get();
         return view('auth.products.editForm', compact('product','categories'));
     }
