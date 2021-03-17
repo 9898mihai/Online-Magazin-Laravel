@@ -22,9 +22,9 @@
                     <td>
                         <div class="btn-group" role="group">
                             <form action="{{ route('products.destroy', $product) }}" method="POST">
-                                <a class="btn btn-warning" type="button" href="/edit-product/{{$product->id}}">Edit</a>
+                                <a class="btn btn-warning" type="button" href="{{ route('products.edit', $product) }}">Edit</a>
                                 @csrf
-                                     @method('DELETE')
+                                @method('DELETE')
                                 <input class="btn btn-danger" type="submit" value="Delete"></form>
                         </div>
                     </td>

@@ -19,7 +19,6 @@ Route::get ('/', function() {
 
 Auth::routes();
 Route::get('/products-list', 'App\Http\Controllers\ProductController@listProducts')->name('listProducts')->middleware('auth');
-Route::get('/edit-product/{id}', 'App\Http\Controllers\ProductController@editProduct')->name('editProduct')->middleware('auth');
 Route::get('/add-product', 'App\Http\Controllers\ProductController@addProduct')->name('addProduct')->middleware('auth');
 Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('get-logout');
 Route::resource('products','App\Http\Controllers\AdminProductController');

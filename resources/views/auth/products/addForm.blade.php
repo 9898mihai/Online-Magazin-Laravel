@@ -9,26 +9,26 @@
                 @csrf
                 <div class="input-group row">
                     <label for="name" class="col-sm-2 col-form-label">Name: </label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-8">
                         <input type="text" class="form-control" name="name" id="name" value="">
                     </div>
                 </div><br>
                 <div class="input-group row">
                     <label for="code" class="col-sm-2 col-form-label">Code: </label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-8">
                         <input type="text" class="form-control" name="code" id="code" value="">
                     </div>
                 </div>
                 <br>
                 <div class="input-group row">
                     <label for="name" class="col-sm-2 col-form-label">Price: </label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-8">
                         <input type="number" class="form-control" name="price" id="price" value="">
                     </div>
                 </div><br>
                 <div class="input-group row">
                     <label for="category_id" class="col-sm-2 col-form-label">Categoria: </label>
-                    <div class="col-sm-6"><br>
+                    <div class="col-sm-8"><br>
                         <select name="category_id" id="category_id" class="form-control">
                             @foreach($categories as $category)
                                 <option value="{{$category->id}}">{{ $category->name }}</option>

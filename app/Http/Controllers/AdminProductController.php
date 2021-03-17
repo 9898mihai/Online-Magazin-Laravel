@@ -75,7 +75,8 @@ class AdminProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $categories = Category::get();
+        return view('auth.products.editForm', compact('product', 'categories'));
     }
 
     /**
@@ -87,7 +88,14 @@ class AdminProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+
+        if ($request->has('image')) {
+            Storage::delete($product->image);
+            $imagepath = $request->file('image')->store('public');
+        }
+
+        $product->update($imagepath);
+        return redirect()->back()->with('message', 'Product edited !!!');
     }
 
     /**
