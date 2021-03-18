@@ -23,27 +23,17 @@
             <a class="navbar-brand" href="/">Online Shop</a>
         </div>
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="/">All products<span class="sr-only">(current)</span></a></li>
                 <li ><a href="{{ route('categories') }}">Categories</a></li>
-{{--                <div class="dropdown">--}}
-{{--                    <button class="dropbtn">Dropdown</button>--}}
-{{--                    @foreach($categories['categories'] as $category)--}}
-{{--                        <div class="dropdown-content">--}}
-{{--                            <a href="{{ route('category', $category->code) }}">{{$category->name}}</a>--}}
-{{--                        </div>--}}
-{{--                    @endforeach--}}
-{{--                </div>--}}
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                    @foreach($categories['categories'] as $category)
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Dropdown <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            @foreach($categories['categories'] as $category)
                             <li><a href="{{ route('category', $category->code) }}">{{$category->name}}</a></li>
+                            @endforeach
                         </ul>
-                    @endforeach
                 </li>
-
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li role="separator" class="divider"></li>
