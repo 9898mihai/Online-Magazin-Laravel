@@ -1,6 +1,6 @@
 @extends('auth.masterauth')
 
-@section('title', 'Edit product: ' . $product->name)
+@section('title', 'Edit product - ' . $product->name)
 
 @section('content')
     <div class="col-md-12">
