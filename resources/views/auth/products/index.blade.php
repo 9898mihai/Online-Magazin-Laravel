@@ -6,7 +6,8 @@
     <div class="col-md-12">
         <table class="table">
             <tbody>
-            <tr><th>#</th>
+            <tr>
+                <th>#</th>
                 <th>Cod</th>
                 <th>Nume</th>
                 <th>Categorie</th>
@@ -18,14 +19,13 @@
                     <td>{{ $product->code }}</td>
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->category->name }}</td>
-
                     <td>
                         <div class="btn-group" role="group">
                             <form action="{{ route('products.destroy', $product) }}" method="POST">
-                                <a class="btn btn-warning" type="button" href="{{ route('products.edit', $product) }}">Edit</a>
-                                @csrf
-                                @method('DELETE')
-                                <input class="btn btn-danger" type="submit" value="Delete"></form>
+                                <a class="btn btn-warning" type="button" href="{{ route('products.edit', $product) }}" style="margin-bottom: 1px">Edit</a>
+                                @csrf @method('DELETE')
+                                <input class="btn btn-danger" type="submit" value="Delete"/>
+                            </form>
                         </div>
                     </td>
                 </tr>
@@ -33,6 +33,5 @@
             </tbody>
         </table>
         <a class="btn btn-success" type="button" href="{{ route('addProduct') }}">Add product</a>
-    </div>
     </div>
 @endsection
