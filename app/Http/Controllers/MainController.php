@@ -31,4 +31,8 @@ class MainController extends Controller
         return view('product', compact('product','categories'));
     }
 
+    public function addBanner(){
+        return view('auth.banners.form');
+    }
+
 }

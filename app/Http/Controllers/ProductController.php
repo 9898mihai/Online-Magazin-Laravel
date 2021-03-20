@@ -13,6 +13,7 @@ class ProductController extends Controller
         $products = Product::get();
           return compact('products');
     }
+
     public function addProduct(){
         $categories = Category::get();
         return view('auth.products.addForm', compact('categories'));

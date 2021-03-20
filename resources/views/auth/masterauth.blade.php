@@ -28,6 +28,7 @@
                 <ul class="nav navbar-nav">
                     @auth
                         <li><a href="{{ route('listProducts') }}">Produse</a>
+                        <li><a href="{{ route('banners.index') }}">Slider</a>
                     @endauth
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

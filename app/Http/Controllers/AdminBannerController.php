@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\ProductRequest;
-use App\Models\Category;
-use App\Models\Product;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-
-class AdminProductController extends Controller
+class AdminBannerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +15,8 @@ class AdminProductController extends Controller
      */
     public function index()
     {
-        //
+        $banners = Banner::get();
+        return view('auth.banners.index', compact('banners'));
     }
 
     /**
@@ -29,7 +26,8 @@ class AdminProductController extends Controller
      */
     public function create()
     {
-        //
+
+        return view('auth.banners.form');
     }
 
     /**
@@ -40,29 +38,27 @@ class AdminProductController extends Controller
      */
     public function store(Request $request)
     {
-
         if ($request->has('image')) {
             $imagepath = $request->file('image')->store('public');
+        } else {
+            return redirect()->back()->with('errormessage', 'Please add image !!!');
         }
 
-        $product = new Product;
-        $product->name = $request->name;
-        $product->code = $request->code;
-        $product->price = $request->price;
-        $product->category_id = $request->category_id;
-        $product->description = $request->description;
-        $product->image = $imagepath;
-        $product->save();
-        return redirect()->back()->with('message', 'Product added !!!');
+        $banner = new banner;
+        $banner->name = $request->name;
+        $banner->description = $request->description;
+        $banner->image = $imagepath;
+        $banner->save();
+        return redirect()->back()->with('message', 'Banner added !!!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Banner  $banner
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show(Banner $banner)
     {
         //
     }
@@ -70,45 +66,43 @@ class AdminProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Banner  $banner
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(Banner $banner)
     {
-        $categories = Category::get();
-        return view('auth.products.editForm', compact('product', 'categories'));
+        return view('auth.banners.form',compact('banner'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Banner  $banner
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, Banner $banner)
     {
         $params = $request->all();
         if ($request->has('image')) {
-            Storage::delete($product->image);
+            Storage::delete($banner->image);
             $params['image'] = $request->file('image')->store('public');
         }
-
-        $product->update($params);
-        return redirect()->back()->with('message', 'Product edited !!!');
+        $banner->update($params);
+        return redirect()->back()->with('message', 'Banner edited !!!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Product  $product
+     * @param  \App\Models\Banner  $banner
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(Banner $banner)
     {
         {
             $product->delete();
-            return redirect()->route('listProducts');
+            return redirect()->route('banners.index');
         }
     }
 }

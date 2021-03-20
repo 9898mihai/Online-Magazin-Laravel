@@ -22,3 +22,6 @@ Route::get('/products-list', 'App\Http\Controllers\ProductController@listProduct
 Route::get('/add-product', 'App\Http\Controllers\ProductController@addProduct')->name('addProduct')->middleware('auth');
 Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('get-logout');
 Route::resource('products','App\Http\Controllers\AdminProductController');
+Route::resource('banners','App\Http\Controllers\AdminBannerController');
+Route::get('/add-banner', 'App\Http\Controllers\MainController@addBanner')->name('addBanner')->middleware('auth');
+
