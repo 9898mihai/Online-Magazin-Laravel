@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Banner;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -11,8 +12,9 @@ Route::get('/{category}/{product}','App\Http\Controllers\MainController@product'
 Route::get ('/', function() {
     $categories = App\Http\Controllers\CategoryController::allCategory();
     $products = App\Http\Controllers\ProductController::allProducts();
+    $banners = Banner::get();
 
-    return view('index', compact('products','categories'));
+    return view('index', compact('products','categories','banners'));
 });
 
 Auth::routes();
