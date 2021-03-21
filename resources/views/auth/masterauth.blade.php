@@ -47,7 +47,7 @@
     <div class="py-4">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="card">
                         <h1 align="center" class="card-header">@yield('title')</h1>
                         <div class="card-body">

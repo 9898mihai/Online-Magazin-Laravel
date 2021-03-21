@@ -1,7 +1,7 @@
 @extends('auth.masterauth')
 
 @isset($banner)
-    @section('title', 'Edit banner - ' . $banner->name)
+    @section('title', 'Edit - ' . $banner->name)
 @else
     @section('title', 'Add banner')
 @endisset
@@ -20,16 +20,16 @@
                     @method('PUT')
                 @endisset
                 @csrf
-                <div class="input-group row" style="margin-bottom: 20px">
-                    <label for="name" class="col-sm-2 col-form-label">Name: </label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" name="name" id="name" value="@isset($banner){{ $banner->name }}@endisset" />
+                    <div class="input-group row" style="margin-bottom: 20px">
+                        <label for="name" class="col-sm-2 col-form-label">Name: </label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" name="name" id="name" value="@isset($banner){{ $banner->name }}@endisset" />
+                        </div>
                     </div>
-                </div>
                 <div class="input-group row" style="margin-bottom: 20px">
                     <label for="description" class="col-sm-2 col-form-label">Description: </label>
                     <div class="col-sm-12">
-                        <input type="text" class="form-control" name="description" id="description" value="@isset($banner){{ $banner->name }}@endisset" />
+                        <input type="text" class="form-control" name="description" id="description" value="@isset($banner){{ $banner->description }}@endisset" />
                     </div>
                 </div>
                 <div class="input-group row" style="margin-bottom: 20px">
@@ -38,7 +38,8 @@
                         <label class="btn btn-default btn-file"> Upload <input type="file" style="display: none;" name="image" id="image" /> </label>
                     </div>
                 </div>
-            </div>
+                    @isset($banner) <img src="{{Storage::url($banner->image)}}" class="img-fluid img-thumbnail" alt="">@endisset
+            </div><br>
             <button class="btn btn-success">@isset($banner)Edit @else Add @endisset</button>
         </form>
     </div>

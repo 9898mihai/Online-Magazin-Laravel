@@ -32,6 +32,6 @@
             @endforeach
             </tbody>
         </table>
-        <a class="btn btn-success" type="button" href="{{ route('addProduct') }}">Add product</a>
     </div>
+    <a class="btn btn-success" type="button" href="{{ route('addProduct') }}">Add product</a>
 @endsection

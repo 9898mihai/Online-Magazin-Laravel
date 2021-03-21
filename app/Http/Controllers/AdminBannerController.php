@@ -101,7 +101,7 @@ class AdminBannerController extends Controller
     public function destroy(Banner $banner)
     {
         {
-            $product->delete();
+            $banner->delete();
             return redirect()->route('banners.index');
         }
     }
