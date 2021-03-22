@@ -26,10 +26,10 @@ class MainController extends Controller
         return view('index', compact('products','categories','banners'));
     }
 
-    public function categories() {
+   /* public function categories() {
         $categories = Category::get();
         return view('categories', compact('categories'));
-    }
+    }*/
 
     public function category($code) {
         $category = Category::where('code', $code)->first();
