@@ -28,7 +28,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" >Categorii<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            @foreach($categories['categories'] as $category)
+                            @foreach($categories as $category)
                             <li><a href="{{ route('category', $category->code) }}">{{$category->name}}</a></li>
                             @endforeach
                         </ul>
