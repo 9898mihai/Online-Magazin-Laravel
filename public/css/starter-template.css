@@ -46,3 +46,38 @@ span.badge.badge-danger {
 div.filters {
     padding-bottom: 5px;
 }
+
+/*@media screen and (min-width: 767px) {
+    .carousel-inner .item {
+        height: 400px;
+    }
+}
+@media screen and (max-width: 990px) {
+    .carousel-inner .item {
+        height: 250px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .carousel-inner .item {
+        height: 200px;
+    }
+}*/
+
+    .image-size {
+        height: 400px;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+@media screen and (max-width: 990px) {
+    .image-size {
+        height:250px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .image-size {
+        height:200px;
+    }
+}
