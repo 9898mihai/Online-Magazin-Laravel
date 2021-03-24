@@ -1,16 +1,16 @@
 @extends('master')
 
-@section('title', 'Categoria: ' . $category->name)
+@section('title', 'Categoria: ' . $categoryName)
 
 @section('content')
 <div class="container">
     <div class="starter-template">
         <h1>
-            {{$category -> name}}
+            {{$categoryName}}
         </h1>
         <div class="row">
             <div class="starter-template">
-                <form method="GET" action="{{ route('category',[$category->code]) }}">
+                <form method="GET" action="{{ route('category',[$categoryCode]) }}">
                     <div class="filters row">
                         <div class="col-md-auto">
                             Price
@@ -20,12 +20,12 @@
                             </label>
                         </div>
                         <div class="col-md-auto">
-                            <a href="{{ route('category',[$category->code]) }}" class="btn btn-warning">Reset</a>
+                            <a href="{{ route('category',[$categoryCode]) }}" class="btn btn-warning">Reset</a>
                             <button type="submit" class="btn btn-primary">Filter</button>
                         </div>
                     </div>
                 </form>
-            @foreach ($category->products as $product)
+            @foreach ($category['data'] as $product)
                 @include('card',compact('product'))
             @endforeach
         </div>

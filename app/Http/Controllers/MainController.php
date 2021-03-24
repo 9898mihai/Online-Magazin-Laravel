@@ -23,7 +23,7 @@ class MainController extends Controller
             $productsQuery->where('price','<=', $request->price_to);
         }
 
-        $products = $productsQuery->paginate(10);
+        $products = $productsQuery->paginate(9);
         return view('index', compact('products','categories','banners'));
     }
 
@@ -35,16 +35,22 @@ class MainController extends Controller
     public function category(Request $request, $code) {
         $categories = Category::get();
         $category_id = Category::where('code', $code)->first();
-        $category = DB::table('categories');
-        $category ->join('products', 'category_id', '=', 'categories.id');
-//        $category ->join('products', 'category_id', '=', $category_id->id);
+        $categoryQuery = DB::table('categories');
+        $categoryQuery ->join('products', 'category_id', '=', 'categories.id');
+        $categoryQuery->where('category_id','=', $category_id->id);
 
         if($request->filled('price_from')) {
-            $category->where('price','>=', $request->price_from);
+            $categoryQuery->where('price','>=', $request->price_from);
         }
 
-        $cat = $category->get();
-        
+        if($request->filled('price_to')) {
+            $categoryQuery->where('price','<=', $request->price_to);
+        }
+
+        $category = $categoryQuery->paginate(9);
+        $category = $category->toArray();
+        $categoryName = $category_id->name;
+        $categoryCode = $category_id->code;
        /* $productsQuery = Product::query();
 
         if ($request->filled('price_from')) {
@@ -56,7 +62,7 @@ class MainController extends Controller
         }
 
         $category = $productsQuery->paginate(10);*/
-        return view('category', compact('category','categories'));
+        return view('category', compact('category','categories','categoryName','categoryCode'));
     }
 
     public function product($category,$product) {
