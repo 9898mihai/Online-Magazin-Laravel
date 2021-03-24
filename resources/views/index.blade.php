@@ -28,17 +28,13 @@
         <h1>All products</h1>
         <form method="GET" action="{{ route('index') }}">
             <div class="filters row">
-                <div class="col-md-auto">
                     Price
                     <label for="price_from">min:<input type="text" name="price_from" id="price_from" size="6" value="{{request()->price_from}}">
                     </label>
                     <label for="price_to">max:<input type="text" name="price_to" id="price_to" size="6" value="{{request()->price_to}}">
                     </label>
-                </div>
-                <div class="col-md-auto">
-                    <a href="{{ route('index') }}" class="btn btn-warning">Reset</a>
-                    <button type="submit" class="btn btn-primary">Filter</button>
-                </div>
+                <a href="{{ route('index') }}" class="btn btn-warning">Reset</a>
+                <button type="submit" class="btn btn-primary">Filter</button>
             </div>
         </form>
 

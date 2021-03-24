@@ -51,17 +51,6 @@ class MainController extends Controller
         $category = $category->toArray();
         $categoryName = $category_id->name;
         $categoryCode = $category_id->code;
-       /* $productsQuery = Product::query();
-
-        if ($request->filled('price_from')) {
-            $productsQuery->where('price','>=', $request->price_from);
-        }
-
-        if ($request->filled('price_to')) {
-            $productsQuery->where('price','<=', $request->price_to);
-        }
-
-        $category = $productsQuery->paginate(10);*/
         return view('category', compact('category','categories','categoryName','categoryCode'));
     }
 

@@ -47,22 +47,6 @@ div.filters {
     padding-bottom: 5px;
 }
 
-/*@media screen and (min-width: 767px) {
-    .carousel-inner .item {
-        height: 400px;
-    }
-}
-@media screen and (max-width: 990px) {
-    .carousel-inner .item {
-        height: 250px;
-    }
-}
-@media screen and (max-width: 767px) {
-    .carousel-inner .item {
-        height: 200px;
-    }
-}*/
-
     .image-size {
         height: 400px;
         width: 100%;
@@ -79,5 +63,35 @@ div.filters {
 @media screen and (max-width: 767px) {
     .image-size {
         height:200px;
+    }
+}
+
+/* Price Filter */
+.sidebar {
+    margin-top: 180px;
+    margin-left: 40px;
+    padding: 0;
+    width: 200px;
+    position: absolute;
+    height: 270px;
+
+}
+
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+@media screen and (max-width: 767px) {
+    .sidebar {
+        margin-top: 0;
+        width: 100%;
+        height: auto;
+        position: relative;
+        float: none;
+    }
+    div.content {
+        margin-left: 0;
     }
 }
