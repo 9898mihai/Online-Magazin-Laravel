@@ -30,12 +30,13 @@ class MainController extends Controller
         $categoryQuery ->join('products', 'category_id', '=', 'categories.id');
         $categoryQuery->where('category_id','=', $category_id->id);
 
-        if($request->has('price_asc')) {
-            $categoryQuery->orderBy('price','ASC');
-        }
-
-        if($request->has('price_dsc')) {
-            $categoryQuery->orderBy('price','DESC');
+        if($request->filled('sorting')){
+            $sort = $request->get('sorting');
+            if($sort=='price_asc'){
+                $categoryQuery->orderBy('price','asc');
+            }elseif ($sort=='price_dsc'){
+                $categoryQuery->orderBy('price','desc');
+            }
         }
 
         if($request->filled('price_from')) {

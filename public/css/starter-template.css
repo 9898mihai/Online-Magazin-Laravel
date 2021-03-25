@@ -65,43 +65,7 @@ div.filters {
     }
 }
 
-/* Price Filter */
-.sidebar {
-    margin-top: 180px;
-    margin-left: 100px;
-    padding: 0;
-    width: 200px;
-    position: absolute;
-    height: 270px;
-
-}
-
-div.content {
-    margin-right: 300px;
-    margin-left: 300px;
-    padding: 1px 16px;
-    height: 1000px;
-}
-
-@media screen and (max-width: 1400px) {
-    .sidebar {
-        margin-left: 20px;
-    }
-    div.content {
-        margin-right: 0;
-        margin-left: 200px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .sidebar {
-        margin-top: 0;
-        width: 100%;
-        height: auto;
-        position: relative;
-        float: none;
-    }
-    div.content {
-        margin-left: 0;
-    }
+.sort {
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
