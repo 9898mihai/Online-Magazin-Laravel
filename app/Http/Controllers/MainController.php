@@ -14,15 +14,6 @@ class MainController extends Controller
         $categories = Category::get();
         $banners = Banner::get();
         $productsQuery = Product::query();
-
-       if ($request->filled('price_from')) {
-            $productsQuery->where('price','>=', $request->price_from);
-        }
-
-        if ($request->filled('price_to')) {
-            $productsQuery->where('price','<=', $request->price_to);
-        }
-
         $products = $productsQuery->paginate(9);
         return view('index', compact('products','categories','banners'));
     }
@@ -39,6 +30,14 @@ class MainController extends Controller
         $categoryQuery ->join('products', 'category_id', '=', 'categories.id');
         $categoryQuery->where('category_id','=', $category_id->id);
 
+        if($request->has('price_asc')) {
+            $categoryQuery->orderBy('price','ASC');
+        }
+
+        if($request->has('price_dsc')) {
+            $categoryQuery->orderBy('price','DESC');
+        }
+
         if($request->filled('price_from')) {
             $categoryQuery->where('price','>=', $request->price_from);
         }
@@ -46,6 +45,7 @@ class MainController extends Controller
         if($request->filled('price_to')) {
             $categoryQuery->where('price','<=', $request->price_to);
         }
+
 
         $category = $categoryQuery->paginate(9);
         $category = $category->toArray();

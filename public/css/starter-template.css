@@ -4,7 +4,6 @@ body {
 }
 
 .starter-template {
-    padding: 20px 15px;
     text-align: center;
 }
 
@@ -69,7 +68,7 @@ div.filters {
 /* Price Filter */
 .sidebar {
     margin-top: 180px;
-    margin-left: 40px;
+    margin-left: 100px;
     padding: 0;
     width: 200px;
     position: absolute;
@@ -78,9 +77,20 @@ div.filters {
 }
 
 div.content {
-    margin-left: 200px;
+    margin-right: 300px;
+    margin-left: 300px;
     padding: 1px 16px;
     height: 1000px;
+}
+
+@media screen and (max-width: 1400px) {
+    .sidebar {
+        margin-left: 20px;
+    }
+    div.content {
+        margin-right: 0;
+        margin-left: 200px;
+    }
 }
 
 @media screen and (max-width: 767px) {
