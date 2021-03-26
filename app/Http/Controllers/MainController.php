@@ -66,4 +66,15 @@ class MainController extends Controller
         return view('auth.banners.form');
     }
 
+    public function productRating(Request $request)
+    {
+        request()->validate(['rate' => 'required']);
+        $product = Product::find($request->id);
+        $rating = new \willvincent\Rateable\Rating;
+        $rating->rating = $request->rate;
+        $rating->user_id = auth()->user()->id;
+        $product->ratings()->save($rating);
+        return redirect()->back();
+    }
+
 }
