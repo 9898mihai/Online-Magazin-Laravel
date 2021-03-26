@@ -28,11 +28,59 @@
             </div>
                 <div class="thumbnail">
                     <div class="caption"align="center">
-                        <form method="GET" action="{{ route('category',[$categoryCode]) }}">
+                        <form name="filterByStar" method="GET" action="{{ route('category',[$categoryCode]) }}">
                             <div class="filters row">
-                                Star rating
                                 <div class="col-md-12">
-                                   [five star]
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="filterByStar" value="5">
+                                        <label class="form-check-label">
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="filterByStar" value="4">
+                                        <label class="form-check-label">
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="filterByStar" value="3">
+                                        <label class="form-check-label">
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="filterByStar" value="2">
+                                        <label class="form-check-label">
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="filterByStar" value="1">
+                                        <label class="form-check-label">
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                            <span class="glyphicon glyphicon-star-empty"></span>
+                                        </label>
+                                    </div>
                                 </div>
                                 <div class="col-md-12">
                                     <a href="{{ route('category',[$categoryCode]) }}" class="btn btn-warning">Reset</a>

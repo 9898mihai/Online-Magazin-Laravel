@@ -17,4 +17,4 @@ Route::resource('products','App\Http\Controllers\AdminProductController');
 Route::resource('banners','App\Http\Controllers\AdminBannerController');
 Route::get('/add-banner', 'App\Http\Controllers\MainController@addBanner')->name('addBanner')->middleware('auth');
 
-Route::post('products', 'App\Http\Controllers\MainController@productRating')->name('product.rating');
+Route::post('products', 'App\Http\Controllers\MainController@productRating')->name('product.rating')->middleware('auth');

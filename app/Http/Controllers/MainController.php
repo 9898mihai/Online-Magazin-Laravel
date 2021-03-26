@@ -30,6 +30,26 @@ class MainController extends Controller
         $categoryQuery ->join('products', 'category_id', '=', 'categories.id');
         $categoryQuery->where('category_id','=', $category_id->id);
 
+
+
+        if($request->filled('filterByStar')){
+            $rate = $request->get('filterByStar');
+            $categoryQuery->join('ratings', 'rateable_id', '=', 'products.id');
+
+            if($rate=='1'){
+                $categoryQuery->where('rating','=', '1');
+            }elseif ($rate=='2'){
+                $categoryQuery->where('rating','=', '2');
+            }elseif ($rate=='3'){
+                $categoryQuery->where('rating','=', '3');
+            }elseif ($rate=='4'){
+                $categoryQuery->where('rating','=', '4');
+            }elseif ($rate=='5'){
+                $categoryQuery->where('rating','=', '5');
+            }
+        }
+
+
         if($request->filled('sorting')){
             $sort = $request->get('sorting');
             if($sort=='price_asc'){
