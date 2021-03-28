@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use willvincent\Rateable\Rating;
 
 class MainController extends Controller
 {
@@ -90,7 +91,7 @@ class MainController extends Controller
     {
         request()->validate(['rate' => 'required']);
         $product = Product::find($request->id);
-        $rating = new \willvincent\Rateable\Rating;
+        $rating = new Rating();
         $rating->rating = $request->rate;
         $rating->user_id = auth()->user()->id;
         $product->ratings()->save($rating);
