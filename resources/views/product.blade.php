@@ -12,11 +12,11 @@
                     </div>
                     <span class="h2"><strong class="text-success">{{ $product->name }}</strong><br /></span>
                 <hr>
-                <p>{{ $product->description }}</p></hr>
+                <p>{{ $product->description }}</p>
                 <form action="/basket/add/1" method="post" class="form-inline push-bit text-right">
                     <button type="submit" class="btn btn-primary" role="button">Add to cart</button>
                 </form>
-
+                
                 <form action="{{ route('product.rating') }}" method="POST">
                     @csrf
                 <div class="rating">
@@ -34,8 +34,8 @@
                     <input type="hidden" name="id" required="" value="{{ $product->id }}">
                     <button class="btn btn-success">Submit</button>
                 </form
-
             </div>
         </div>
+    </div>
     </div>
 @endsection

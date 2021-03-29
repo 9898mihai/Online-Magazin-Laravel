@@ -37,15 +37,15 @@ class MainController extends Controller
             $rate = $request->get('filterByStar');
             $categoryQuery->join('ratings', 'rateable_id', '=', 'products.id');
 
-            if($rate=='1'){
+            if($rate == '1'){
                 $categoryQuery->where('rating','=', '1');
-            }elseif ($rate=='2'){
+            }elseif ($rate == '2'){
                 $categoryQuery->where('rating','=', '2');
-            }elseif ($rate=='3'){
+            }elseif ($rate == '3'){
                 $categoryQuery->where('rating','=', '3');
-            }elseif ($rate=='4'){
+            }elseif ($rate == '4'){
                 $categoryQuery->where('rating','=', '4');
-            }elseif ($rate=='5'){
+            }elseif ($rate == '5'){
                 $categoryQuery->where('rating','=', '5');
             }
         }
@@ -72,7 +72,7 @@ class MainController extends Controller
         $category = $categoryQuery->paginate(9);
         $category = $category->toArray();
         $categoryName = $category_id->name;
-        $categoryCode = $category_id->code;
+        $categoryCode = $category_id->code; 
         return view('category', compact('category','categories','categoryName','categoryCode'));
     }
 
