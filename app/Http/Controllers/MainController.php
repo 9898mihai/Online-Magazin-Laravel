@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Banner;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\About;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use willvincent\Rateable\Rating;
@@ -68,7 +69,7 @@ class MainController extends Controller
             $categoryQuery->where('price','<=', $request->price_to);
         }
 
-
+        
         $category = $categoryQuery->paginate(9);
         $category = $category->toArray();
         $categoryName = $category_id->name;
@@ -96,6 +97,17 @@ class MainController extends Controller
         $rating->user_id = auth()->user()->id;
         $product->ratings()->save($rating);
         return redirect()->back();
+    }
+
+    public function about(){
+        $categories = Category::get();
+        $about = About::get();
+        return view('about', compact('categories','about'));
+    }
+
+    public function editAbout(){
+        $about = About::get();
+        return view('auth.editaboutpage',  compact('about'));
     }
 
 }

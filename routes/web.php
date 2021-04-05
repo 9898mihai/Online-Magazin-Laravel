@@ -18,3 +18,7 @@ Route::resource('banners','App\Http\Controllers\AdminBannerController');
 Route::get('/add-banner', 'App\Http\Controllers\MainController@addBanner')->name('addBanner')->middleware('auth');
 
 Route::post('products', 'App\Http\Controllers\MainController@productRating')->name('product.rating')->middleware('auth');
+
+Route::get('/about','App\Http\Controllers\MainController@about')->name('about');
+Route::get('/edit-about','App\Http\Controllers\MainController@editAbout')->name('editAbout');
+Route::post('abouts','App\Http\Controllers\AboutController@update');

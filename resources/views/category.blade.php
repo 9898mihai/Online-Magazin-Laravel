@@ -32,8 +32,9 @@
                             <div class="filters row">
                                 <div class="col-md-12">
                                     @for ($i = 5; $i >= 1; $i--)
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="filterByStar" value="{{$i}}" @if('filterByStar' == '2') {{'checked'}}@endif>
+                                     {{-- @foreach ($category['data'] as $cat)  --}}
+                                    <div class="form-check"> 
+                                        <input class="form-check-input" type="radio" name="filterByStar" value="{{$i}}" @isset($category['data'][0]->rating) {{ ($category['data'][0]->rating == $i)? "checked" : "" }} @endisset>
                                         <label class="form-check-label">
                                             @for ($j = $i; $j >= 1; $j--)
                                             <span class="glyphicon glyphicon-star"></span>
@@ -43,6 +44,7 @@
                                             @endfor
                                         </label>
                                     </div>
+                                     {{-- @endforeach --}}
                                     @endfor
                                 </div>
                                 <div class="col-md-12">

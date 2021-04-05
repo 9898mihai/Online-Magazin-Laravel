@@ -33,6 +33,7 @@
                             @endforeach
                         </ul>
                 </li>
+                <li><a href="{{ route('about') }}">About</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li role="separator" class="divider"></li>
