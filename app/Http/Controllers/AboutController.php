@@ -11,7 +11,7 @@ class AboutController extends Controller
     public function update(Request $request, About $about)
     {
         $params = $request->all();
-    
+        
         $about->update($params);
         return redirect()->back()->with('message', 'Edited !!!');
     }

@@ -110,4 +110,46 @@ class MainController extends Controller
         return view('auth.editaboutpage',  compact('about'));
     }
 
+    public function getFromBD(){
+        return response()->json(Product::get(), 200);
+    }
+
+    public function add(Request $request){
+        $product = Product::create($request->all());
+        
+        return response()->json($product, 201);
+    }
+
+    public function edit(Request $request, $id){
+        $product = Product::find($id);
+
+        if (is_null($product)){
+            return response()->json(['error'=> true, 'message' => 'Not found'], 404);
+        }
+
+        $product->update($request->all());
+        return response()->json($product, 200);
+    }
+
+    public function delete(Request $request, $id){
+        $product = Product::find($id);
+
+         if (is_null($product)){
+            return response()->json(['error'=> true, 'message' => 'Not found'], 404);
+        }
+
+        $product->delete();
+        return response()->json('', 204);
+    }
+
+    public function porductById($id){
+        $product = Product::find($id);
+
+        if (is_null($product)){
+            return response()->json(['error'=> true, 'message' => 'Not found'], 404);
+        }
+
+        return response()->json($product, 200);
+    }
+
 }
