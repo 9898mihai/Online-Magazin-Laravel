@@ -22,3 +22,7 @@ Route::post('products', 'App\Http\Controllers\MainController@productRating')->na
 Route::get('/about','App\Http\Controllers\MainController@about')->name('about');
 Route::get('/edit-about','App\Http\Controllers\MainController@editAbout')->name('editAbout');
 Route::post('abouts','App\Http\Controllers\AboutController@update');
+
+Route::get('/basket','App\Http\Controllers\BasketController@basket')->name('basket');
+Route::get('/basket/place','App\Http\Controllers\BasketController@basketPlace')->name('basket-place');
+Route::post('/basket/add/{id}','App\Http\Controllers\BasketController@basketAdd')->name('basket-add');

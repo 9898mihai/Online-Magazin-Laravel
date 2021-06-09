@@ -5,10 +5,10 @@
             <img src="{{Storage::url($product->image)}}" alt="">
             <p>{{$product->price}}$</p>
             <p>
-            <form action="/basket/add/1" method="POST">
+            <form action="{{ route('basket-add', $product->id) }}" method="POST">
                 <button type="submit" class="btn btn-primary" role="button">Add to cart</button>
                 <a href="{{ route('product', [$product->category_id, $product->code]) }}" class="btn btn-default" role="button">Details</a>
-                <input type="hidden" name="" value="">
+                @csrf
             </form>
             </p>
         </div>
